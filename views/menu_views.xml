@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Actions -->
+    <record id="action_library_book" model="ir.actions.act_window">
+        <field name="name">Books</field>
+        <field name="res_model">library.book</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_library_member" model="ir.actions.act_window">
+        <field name="name">Members</field>
+        <field name="res_model">library.member</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_library_lending" model="ir.actions.act_window">
+        <field name="name">Lendings</field>
+        <field name="res_model">library.lending</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_library_category" model="ir.actions.act_window">
+        <field name="name">Book Categories</field>
+        <field name="res_model">library.book.category</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Root Menu -->
+    <menuitem 
+        id="library_root_menu"
+        name="Library"
+        sequence="10"/>
+
+    <!-- Sub Menus -->
+    <menuitem
+        id="library_operations_menu"
+        name="Operations"
+        parent="library_root_menu"
+        sequence="10"/>
+
+    <menuitem
+        id="library_configuration_menu"
+        name="Configuration"
+        parent="library_root_menu"
+        sequence="100"/>
+
+    <!-- Menu Items -->
+    <menuitem
+        id="library_book_menu"
+        name="Books"
+        parent="library_operations_menu"
+        action="action_library_book"
+        sequence="10"/>
+
+    <menuitem
+        id="library_member_menu"
+        name="Members"
+        parent="library_operations_menu"
+        action="action_library_member"
+        sequence="20"/>
+
+    <menuitem
+        id="library_lending_menu"
+        name="Lendings"
+        parent="library_operations_menu"
+        action="action_library_lending"
+        sequence="30"/>
+
+    <menuitem
+        id="library_category_menu"
+        name="Book Categories"
+        parent="library_configuration_menu"
+        action="action_library_category"
+        sequence="10"/>
+</odoo>
